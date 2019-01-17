@@ -7,11 +7,154 @@
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-8 ml-auto mr-auto">
+                                <!--
+                                                                received_from,class,kshs,being-payment-for-school,particulars-(admission,tuition,comp/french,swimming,transport,reportbook/diary,trip,meal,others),total
+                                -->
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput2">Received From</label>
+                                            <input type="text" class="form-control from" id="exampleFormControlInput2"
 
+                                                   placeholder="Transaction Details">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput2">Class</label>
+                                            <input type="text" class="form-control cl" id="exampleFormControlInput2"
+
+                                                   placeholder="Transaction Details">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Date</label>
+                                    <input type="date" class="form-control dt" id="exampleFormControlInput1"
+                                           name="date"
+                                           placeholder="Member Name">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary btn-block" data-toggle="modal"
+                                            data-target="#exampleModal">
+                                        Add Particulars
+                                    </button>
+                                </div>
+                                <div class="form-group" id="cont">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput2">Extra Details</label>
+                                    <input type="text" class="form-control ex" id="exampleFormControlInput2"
+                                           name="desc"
+                                           placeholder="Transaction Details">
+                                </div>
+                                <div class="form-group">
+                                    <!--label for="exampleFormControlInput3">Account</label-->
+                                    <select name="type" class="selectpicker pt" data-title="Select Payment Type"
+                                            data-style="btn-primary btn-block" data-menu-style="dropdown-blue">
+                                        <option value="Cash">Cash</option>
+                                        <option value="Bank">Bank</option>
+                                        <option value="Mpesa">Mpesa</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="hj" class="selectpicker" data-title="Action"
+                                            data-style="btn-default btn-block" data-menu-style="dropdown-blue">
+                                        <option value="pr">Print Receipt</option>
+                                        <option value="tr">Go to Transaction</option>
+                                    </select>
+                                </div>
+                                <button type="submit" id="subo" class="btn btn-success btn-block">Add Transaction
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Particulars</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput3">Particulars</label>
+                        <select name="part" class="selectpicker part" data-title="Select Particular"
+                                data-style="btn-primary btn-block"
+                                data-menu-style="dropdown-blue">
+                            <option value="admission">admission</option>
+                            <option value="tuition">tuition</option>
+                            <option value="comp/french">comp/french</option>
+                            <option value="swimming">swimming</option>
+                            <option value="transport">transport</option>
+                            <option value="reportbook/diary">reportbook/diary</option>
+                            <option value="trip">trip</option>
+                            <option value="meal">meal</option>
+                            <option value="others">others</option>
 
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput3">Amount </label>
+                        <input type="text" class="form-control amt" id="exampleFormControlInput3" name="amt"
+                               placeholder="Enter Amount">
+                    </div>
+                    <button class="btn ii btn-success btn-block" id="kik">Add Particulars</button>
+
+                </div>
+                <div class="modal-footer">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("redy");
+            $("#kik").click(function () {
+                var amt = $(".amt").val();
+                var part = $(".part").children("option:selected").val();
+                console.log(amt + "-" + part);
+                var todis = amt + "-" + part;
+                $("#cont").append(`<div class="alert text-primary alert-dismissible fade show kii" jizz="` + todis + `" role="alert">
+                                        ` + todis + `
+                                        <button type="button" class="closen btn btn-round btn-danger "
+                                                data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>`);
+            });
+            $("#subo").click(function () {
+                var ji = $(".kii").map(function () {
+                    return $(this).attr("jizz");
+                }).get();
+                var jj = ji.join("!");
+                var from = $(".from").val();
+                var cl = $(".cl").val();
+                var dt = $(".dt").val();
+                var ex = $(".ex").val();
+                var pt = $(".pt").children("option:selected").val();
+                var yote = jj + ".." + from + ".." + cl + ".." + dt + ".." + ex + ".." + pt
+                console.log(yote);
+                var goto = "/fee/" + yote;
+                window.location = goto;
+            });
+        });
+    </script>
 {% endblock %}

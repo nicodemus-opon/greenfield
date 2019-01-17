@@ -2,64 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="861b4c7f-1d53-4804-abaf-7d648ba3ea0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/documentation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/light-bootstrap-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/css/light-bootstrap-dashboard.css?v=2.0.1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/nucleo-icons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/nucleo-icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/nucleo-icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/nucleo-icons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/nucleo-icons.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/apple-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/blog-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/blog-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/blog-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/blog-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/default-avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/flags/AU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/flags/BR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/flags/DE.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/flags/GB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/flags/RO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/flags/US.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/full-screen-image-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/full-screen-image-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/sidebar-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/sidebar-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/sidebar-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/img/sidebar-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/core/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/core/jquery.3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/core/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/light-bootstrap-dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/light-bootstrap-dashboard.js?v=2.0.1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-datetimepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-notify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-selectpicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-switch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/bootstrap-tagsinput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/chartist.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/fullcalendar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/jquery-jvectormap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/jquery.bootstrap-wizard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/jquery.sharrre.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/jquery.validate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/nouislider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/js/plugins/sweetalert2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/blank.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numstowords.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/invoice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/transactions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blank copy 5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/fees.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fees.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,177 +21,82 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/greenfield$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1546955529136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/greenfield$numstowords.coverage" NAME="numstowords Coverage Results" MODIFIED="1547710941420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/greenfield$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1547703046892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/greenfield$greenfield.coverage" NAME="greenfield Coverage Results" MODIFIED="1546953673725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            <state relative-caret-position="275">
+              <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
+              <folding>
+                <element signature="e#1#78#0" expanded="true" />
+                <element signature="e#308#411#0" />
+                <element signature="e#433#638#0" />
+                <element signature="e#673#842#0" />
+                <element signature="e#875#1146#0" />
+                <element signature="e#1196#1604#0" />
+                <element signature="e#1673#1706#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+            <state relative-caret-position="97">
+              <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/transactions.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="638">
+              <caret line="150" column="10" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="150" selection-end-column="10" />
               <folding>
-                <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#noscript#0;n#!!top" expanded="true" />
+                <element signature="n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
+        <entry file="file://$PROJECT_DIR$/numstowords.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="336" column="14" lean-forward="true" selection-start-line="336" selection-start-column="14" selection-end-line="336" selection-end-column="14" />
+            <state relative-caret-position="593">
+              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/invoice.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2217">
+              <caret line="206" column="4" lean-forward="true" selection-start-line="206" selection-start-column="4" selection-end-line="206" selection-end-column="4" />
               <folding>
-                <element signature="e#25102#30868#0#HTML" />
-                <element signature="e#25144#26545#0#HTML" />
-                <element signature="e#25204#26514#0#HTML" />
-                <element signature="e#25266#26160#0#HTML" />
-                <element signature="e#25327#26121#0#HTML" />
-                <element signature="e#25385#25688#0#HTML" />
-                <element signature="e#25449#25641#0#HTML" />
-                <element signature="e#25729#26078#0#HTML" />
-                <element signature="e#25793#26031#0#HTML" />
-                <element signature="e#26193#26479#0#HTML" />
-                <element signature="e#26297#26440#0#HTML" />
-                <element signature="e#26570#27977#0#HTML" />
-                <element signature="e#26630#27946#0#HTML" />
-                <element signature="e#26692#27591#0#HTML" />
-                <element signature="e#26753#27552#0#HTML" />
-                <element signature="e#26811#27116#0#HTML" />
-                <element signature="e#26875#27069#0#HTML" />
-                <element signature="e#27157#27509#0#HTML" />
-                <element signature="e#27221#27462#0#HTML" />
-                <element signature="e#27624#27911#0#HTML" />
-                <element signature="e#27728#27872#0#HTML" />
-                <element signature="e#28002#29406#0#HTML" />
-                <element signature="e#28062#29375#0#HTML" />
-                <element signature="e#28124#29015#0#HTML" />
-                <element signature="e#28185#28976#0#HTML" />
-                <element signature="e#28243#28546#0#HTML" />
-                <element signature="e#28307#28499#0#HTML" />
-                <element signature="e#28587#28933#0#HTML" />
-                <element signature="e#28651#28886#0#HTML" />
-                <element signature="e#29048#29340#0#HTML" />
-                <element signature="e#29152#29301#0#HTML" />
-                <element signature="e#29431#30841#0#HTML" />
-                <element signature="e#29491#30810#0#HTML" />
-                <element signature="e#29553#30456#0#HTML" />
-                <element signature="e#29614#30417#0#HTML" />
-                <element signature="e#29672#29982#0#HTML" />
-                <element signature="e#29736#29935#0#HTML" />
-                <element signature="e#30023#30374#0#HTML" />
-                <element signature="e#30087#30327#0#HTML" />
-                <element signature="e#30489#30775#0#HTML" />
-                <element signature="e#30593#30736#0#HTML" />
-                <element signature="e#38257#42004#0#HTML" />
-                <element signature="e#38323#40125#0#HTML" />
-                <element signature="e#38398#40070#0#HTML" />
-                <element signature="e#38474#38783#0#HTML" />
-                <element signature="e#38840#39048#0#HTML" />
-                <element signature="e#39105#40011#0#HTML" />
-                <element signature="e#39192#39617#0#HTML" />
-                <element signature="e#39743#39948#0#HTML" />
-                <element signature="e#40174#41953#0#HTML" />
-                <element signature="e#40249#41898#0#HTML" />
-                <element signature="e#40325#40627#0#HTML" />
-                <element signature="e#40684#40874#0#HTML" />
-                <element signature="e#40931#41839#0#HTML" />
-                <element signature="e#41018#41448#0#HTML" />
-                <element signature="e#41574#41776#0#HTML" />
-                <element signature="e#42049#58184#0#HTML" />
-                <element signature="e#42115#43798#0#HTML" />
-                <element signature="e#42190#43743#0#HTML" />
-                <element signature="e#42266#42572#0#HTML" />
-                <element signature="e#42629#42824#0#HTML" />
-                <element signature="e#42881#43684#0#HTML" />
-                <element signature="e#42968#43290#0#HTML" />
-                <element signature="e#43416#43621#0#HTML" />
-                <element signature="e#43847#58133#0#HTML" />
-                <element signature="e#43922#58078#0#HTML" />
-                <element signature="e#44009#44301#0#HTML" />
-                <element signature="e#44358#57526#0#HTML" />
-                <element signature="e#44443#57463#0#HTML" />
-                <element signature="e#44538#57396#0#HTML" />
-                <element signature="e#44628#57323#0#HTML" />
-                <element signature="e#44708#46721#0#HTML" />
-                <element signature="e#44789#45549#0#HTML" />
-                <element signature="e#44874#45467#0#HTML" />
-                <element signature="e#44983#45380#0#HTML" />
-                <element signature="e#45773#46643#0#HTML" />
-                <element signature="e#23983#24283#0#HTML" />
-                <element signature="e#24336#24636#0#HTML" />
-                <element signature="e#46794#48815#0#HTML" />
-                <element signature="e#46875#47643#0#HTML" />
-                <element signature="e#46960#47561#0#HTML" />
-                <element signature="e#47069#47474#0#HTML" />
-                <element signature="e#25069#25201#0#HTML" />
-                <element signature="e#47867#48737#0#HTML" />
-                <element signature="e#25732#26032#0#HTML" />
-                <element signature="e#26085#26385#0#HTML" />
-                <element signature="e#48888#51041#0#HTML" />
-                <element signature="e#48969#49737#0#HTML" />
-                <element signature="e#49054#49655#0#HTML" />
-                <element signature="e#49163#49568#0#HTML" />
-                <element signature="e#26818#26950#0#HTML" />
-                <element signature="e#49814#50016#0#HTML" />
-                <element signature="e#50093#50963#0#HTML" />
-                <element signature="e#27637#27937#0#HTML" />
-                <element signature="e#27990#28290#0#HTML" />
-                <element signature="e#51114#53121#0#HTML" />
-                <element signature="e#51195#51954#0#HTML" />
-                <element signature="e#51280#51872#0#HTML" />
-                <element signature="e#51389#51785#0#HTML" />
-                <element signature="e#52173#53043#0#HTML" />
-                <element signature="e#29305#29605#0#HTML" />
-                <element signature="e#29658#29958#0#HTML" />
-                <element signature="e#53194#55182#0#HTML" />
-                <element signature="e#53275#54035#0#HTML" />
-                <element signature="e#53360#53953#0#HTML" />
-                <element signature="e#53469#53866#0#HTML" />
-                <element signature="e#54234#55104#0#HTML" />
-                <element signature="e#30954#31254#0#HTML" />
-                <element signature="e#31307#31607#0#HTML" />
-                <element signature="e#55255#57246#0#HTML" />
-                <element signature="e#55336#56104#0#HTML" />
-                <element signature="e#55421#56022#0#HTML" />
-                <element signature="e#55530#55935#0#HTML" />
-                <element signature="e#32040#32172#0#HTML" />
-                <element signature="e#56298#57168#0#HTML" />
-                <element signature="e#32673#32973#0#HTML" />
-                <element signature="e#33026#33326#0#HTML" />
-                <element signature="e#57583#58019#0#HTML" />
-                <element signature="e#57735#57956#0#HTML" />
+                <element signature="n#style#0;n#u#0;n#div#0;n#div#0;n#td#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#td#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/sidebar.html">
+        <entry file="file://$PROJECT_DIR$/templates/fees.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/blank.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="473">
+              <caret line="152" column="91" lean-forward="true" selection-start-line="152" selection-start-column="27" selection-end-line="152" selection-end-column="91" />
+              <folding>
+                <element signature="n#div#1;n#!!top" />
+                <element signature="e#7117#7124#1#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -250,6 +108,7 @@
       <list>
         <option value="Flask Main" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -272,9 +131,14 @@
         <option value="$PROJECT_DIR$/templates/navbar.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/blank.html" />
-        <option value="$PROJECT_DIR$/templates/sidebar.html" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/templates/layout.html" />
+        <option value="$PROJECT_DIR$/templates/registration.html" />
+        <option value="$PROJECT_DIR$/templates/transactions.html" />
+        <option value="$PROJECT_DIR$/templates/sidebar.html" />
+        <option value="$PROJECT_DIR$/numstowords.py" />
+        <option value="$PROJECT_DIR$/templates/invoice.html" />
+        <option value="$PROJECT_DIR$/templates/fees.html" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -300,6 +164,24 @@
             <path>
               <item name="greenfield" type="b2602c69:ProjectViewProjectNode" />
               <item name="greenfield" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="greenfield" type="b2602c69:ProjectViewProjectNode" />
+              <item name="greenfield" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="greenfield" type="b2602c69:ProjectViewProjectNode" />
+              <item name="greenfield" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="greenfield" type="b2602c69:ProjectViewProjectNode" />
+              <item name="greenfield" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -314,7 +196,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.buildout.BuildoutModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -328,7 +210,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flask server.Flask (app.py)">
+  <component name="RunManager" selected="Python.numstowords">
+    <configuration name="numstowords" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="greenfield" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/numstowords.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Flask (app.py)" type="Python.FlaskServer" factoryName="Flask server" temporary="true" nameIsGenerated="true">
       <module name="greenfield" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
@@ -336,7 +240,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -351,7 +255,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -361,6 +265,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.numstowords" />
         <item itemvalue="Flask server.Flask (app.py)" />
       </list>
     </recent_temporary>
@@ -377,20 +282,23 @@
       <updated>1546772131836</updated>
       <workItem from="1546772135601" duration="900000" />
       <workItem from="1546953561135" duration="3895000" />
-      <workItem from="1546969356155" duration="3043000" />
+      <workItem from="1546969356155" duration="7899000" />
+      <workItem from="1547653576712" duration="27846000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7838000" />
+    <option name="totallyTimeSpent" value="40540000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2092084" />
+      <window_info id="DB Browser" weight="0.32956383" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21243942" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="DB Execution Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
@@ -401,7 +309,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32876712" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -417,17 +325,17 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socketserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="469" selection-start-line="469" selection-end-line="469" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/blank copy 4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -559,10 +467,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sidebar.html">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socketserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="437">
+          <caret line="489" column="37" lean-forward="true" selection-start-line="489" selection-start-column="37" selection-end-line="489" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -573,20 +481,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/templates/invoice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="2217">
+          <caret line="206" column="4" lean-forward="true" selection-start-line="206" selection-start-column="4" selection-end-line="206" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#u#0;n#div#0;n#div#0;n#td#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#td#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/transactions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="150" column="10" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="150" selection-end-column="10" />
+          <folding>
+            <element signature="n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+        <state relative-caret-position="97">
+          <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/numstowords.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fees.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="152" column="91" lean-forward="true" selection-start-line="152" selection-start-column="27" selection-end-line="152" selection-end-column="91" />
           <folding>
-            <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#noscript#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#!!top" />
+            <element signature="e#7117#7124#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
+          <folding>
+            <element signature="e#1#78#0" expanded="true" />
+            <element signature="e#308#411#0" />
+            <element signature="e#433#638#0" />
+            <element signature="e#673#842#0" />
+            <element signature="e#875#1146#0" />
+            <element signature="e#1196#1604#0" />
+            <element signature="e#1673#1706#0" />
           </folding>
         </state>
       </provider>

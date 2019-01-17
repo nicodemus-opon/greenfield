@@ -1,0 +1,152 @@
+{% extends 'layout.html' %} {% block body %}
+
+    <div class="wrapper">
+        {% include 'sidebar.html' %}
+        <div class="main-panel">
+
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    <!-- the code for the display of the table -->
+
+                    <div class="toolbar" style="padding-right: 10px;">
+                        <!--   Here you can write extra buttons/actions for the toolbar  -->
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">New
+                            Transaction
+                        </button>
+                    </div>
+
+                    <table id="bootstrap-table" class="table">
+
+                        <thead>
+                        <th data-field="state" data-sortable="true">Transaction ID</th>
+                        <th data-field="id" data-sortable="true" class="text-center">Date</th>
+                        <th data-field="name" data-sortable="true">Amount</th>
+                        <th data-field="salary" data-sortable="true">Account</th>
+                        <th data-field="country" data-sortable="true">Description</th>
+                        <th data-field="cityn" data-sortable="true">Type</th>
+                        <th data-field="cityj" data-sortable="true">Status</th>
+                        <th data-field="action">Action</th>
+                        <!--th data-field="cityi"></th-->
+                        <!--th data-field="actions" class="td-actions text-right" data-events="operateEvents"
+                            data-formatter="operateFormatter">Actions
+                        </th-->
+                        </thead>
+                        <tbody>
+                        {% for i in range(session["valsxy"]) -%}
+                            <tr>
+                                {% for k in range(session["colsxy"]) -%}
+                                    <td>
+                                        {{ session["vals"][i][k] }}
+                                    </td>
+                                {%- endfor %}
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a  href="{{session['invoice'][i]}}" class="btn btn-secondary">Print</a>
+                                        <button type="button" class="btn btn-secondary">Middle</button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        {%- endfor %}
+                        <!--tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>Dakota Rice</td>
+                            <td>$36,738</td>
+                            <td>Niger</td>
+                            <td>Oud-Turnhout</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>2</td>
+                            <td>Minerva Hooper</td>
+                            <td>$23,789</td>
+                            <td>Curaçao</td>
+                            <td>Sinaai-Waas</td>
+                            <td></td>
+                        </tr-->
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Transaction</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/transact">
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Date</label>
+                            <input type="date" class="form-control" id="exampleFormControlInput1" name="date"
+                                   placeholder="Member Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput2">Description</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput2" name="desc"
+                                   placeholder="Transaction Details">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput3">Account</label>
+                                    <select name="acc" class="selectpicker" data-title="Select Account"
+                                            data-style="btn-primary btn-block" data-menu-style="dropdown-blue">
+                                        <option value="In">In</option>
+                                        <option value="Out">Out</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput3">Status</label>
+                                    <select name="status" class="selectpicker" data-title="Select Status"
+                                            data-style="btn-primary btn-block" data-menu-style="dropdown-blue">
+                                        <option value="Advance">Advance</option>
+                                        <option value="Complete">Complete</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput3">Amount</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput3" name="amount"
+                                   placeholder="Enter Amount">
+                        </div>
+                        <div class="form-group">
+                            <!--label for="exampleFormControlInput3">Account</label-->
+                            <select name="type" class="selectpicker" data-title="Select Payment Type"
+                                    data-style="btn-primary btn-block" data-menu-style="dropdown-blue">
+                                <option value="Cash">Cash</option>
+                                <option value="Bank">Bank</option>
+                                <option value="Mpesa">Mpesa</option>
+                            </select>
+                        </div>
+                        <input type="submit" class="btn btn-success btn-block" value="Add Transaction">
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
