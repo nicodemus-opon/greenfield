@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A simple, clean, and responsive HTML invoice template</title>
+
+    <style>
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 24px;
+            line-height: 24px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /** RTL **/
+        .rtl {
+            direction: rtl;
+            font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .rtl table {
+            text-align: right;
+        }
+
+        .rtl table tr td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td class="title">
+                            <!--img src="https://www.sparksuite.com/images/logo.png" style="width:100%; max-width:300px;"-->
+                            RAPHA GARDEN SCHOOL
+                        </td>
+
+                        <td>
+                            Invoice #: {{ session["vals"][0][0] }}<br>
+                            Created: {{ session["vals"][0][3] }}<br>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr class="information">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td>
+                            P.O.BOX 426<br>
+                            Athi River<br>
+
+                        </td>
+
+                        <td>
+                            Tel.0722 272 063<br>
+                            Raphagarden@gmail.com
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr class="heading">
+            <td>
+                Payment Method
+            </td>
+
+            <td>
+                {{ session["vals"][0][6] }}
+            </td>
+        </tr>
+
+        <tr class="details">
+            <td>
+                {{ session["vals"][0][6] }}
+            </td>
+
+            <td>
+                Ksh. {{ session["vals"][0][7] | numberFormat }}
+            </td>
+        </tr>
+
+        <tr class="heading">
+            <td>
+                Item
+            </td>
+
+            <td>
+                Price
+            </td>
+        </tr>
+        {% for i in range(session["lens"]) -%}
+            <tr class="item">
+
+                <td>
+                    {{ session["todo"][i] }}
+                </td>
+                <td>
+                    {{ session["pricex"][i] | numberFormat }}
+                </td>
+
+            </tr>
+        {%- endfor %}
+        <tr class="total">
+            <td></td>
+            <td>
+                Total: Ksh. {{ session["vals"][0][7] | numberFormat }}
+            </td>
+        </tr>
+        <br>
+        <td colspan="2">
+            <div class="row">
+                <div class="column"><b>Amount in Words</b> <u
+                        style="border-bottom: 1px dashed #999;text-decoration: none;">{{ session["vals"][0][7] | words }}</u>
+                </div>
+                <div class="columnx" style="align-content: center;">
+                    <b> <em>With Thanks</em></b><br>
+                    <div class="rectangle"></div>
+
+                    <p>For Rapha Gardens</p>
+                </div>
+            </div>
+
+        </td>
+
+    </table>
+</div>
+<script>
+    //window.print();
+</script>
+<style>
+    .column {
+        float: left;
+        width: 75%;
+    }
+
+    .columnx {
+        float: left;
+        width: 25%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+<style>
+    .rectangle {
+        height: 50px;
+        width: 100px;
+        border-style: solid;
+        border-color: #555;
+    }
+</style>
+</body>
+</html>

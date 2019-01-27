@@ -2,8 +2,9 @@
 
     <div class="wrapper">
         {% include 'sidebar.html' %}
-        <div class="main-panel">
 
+        <div class="main-panel">
+{% include 'navbar.html' %}
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
@@ -19,8 +20,8 @@
                                         </div>
                                         <div class="col-7">
                                             <div class="numbers">
-                                                <p class="card-category">Number</p>
-                                                <h4 class="card-title">150GB</h4>
+                                                <p class="card-category">Account Balance</p>
+                                                <h4 class="card-title">Ksh. {{ session["valo"][0] | numberFormat }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -28,7 +29,7 @@
                                 <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-refresh"></i> Update Now
+                                        <i class="fa fa-refresh"></i>
                                     </div>
                                 </div>
                             </div>
@@ -44,8 +45,8 @@
                                         </div>
                                         <div class="col-7">
                                             <div class="numbers">
-                                                <p class="card-category">Revenue</p>
-                                                <h4 class="card-title">$ 1,345</h4>
+                                                <p class="card-category">Account In</p>
+                                                <h4 class="card-title">Ksh. {{ session["valo"][1]| numberFormat }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -53,7 +54,7 @@
                                 <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-calendar-o"></i> Last day
+                                        <i class="fa fa-calendar-o"></i>
                                     </div>
                                 </div>
                             </div>
@@ -69,8 +70,8 @@
                                         </div>
                                         <div class="col-7">
                                             <div class="numbers">
-                                                <p class="card-category">Errors</p>
-                                                <h4 class="card-title">23</h4>
+                                                <p class="card-category">Account Out</p>
+                                                <h4 class="card-title">Ksh. {{ session["valo"][2] | numberFormat }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +79,7 @@
                                 <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-clock-o"></i> In the last hour
+                                        <i class="fa fa-clock-o"></i>
                                     </div>
                                 </div>
                             </div>
@@ -89,13 +90,13 @@
                                     <div class="row">
                                         <div class="col-5">
                                             <div class="icon-big text-center icon-warning">
-                                                <i class="nc-icon nc-favourite-28 text-primary"></i>
+                                                <i class="nc-icon nc-badge text-primary"></i>
                                             </div>
                                         </div>
                                         <div class="col-7">
                                             <div class="numbers">
-                                                <p class="card-category">Followers</p>
-                                                <h4 class="card-title">+45K</h4>
+                                                <p class="card-category">Transactions</p>
+                                                <h4 class="card-title">{{ session["valo"][3] }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +104,7 @@
                                 <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-refresh"></i> Update now
+                                        <i class="fa fa-refresh"></i>
                                     </div>
                                 </div>
                             </div>
@@ -112,229 +113,85 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Email Statistics</h4>
-                                    <p class="card-category">Last Campaign Performance</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div id=chartEmail class="ct-chart ct-perfect-fourth"></div>
-                                </div>
-                                <div class="card-footer ">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Open
-                                        <i class="fa fa-circle text-danger"></i> Bounce
-                                        <i class="fa fa-circle text-warning"></i> Unsubscribe
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-clock-o"></i> Campaign sent 2 days ago
+
+                                <h4 class="card-title">
+                                    <small>Transaction Distribution</small>
+                                </h4>
+                                <div class="row margin-top">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <div id="chartPreferences" class="ct-chart "></div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <h6>Legend</h6>
+                                        <i class="fa fa-circle text-info"></i> Mpesa
+                                        <i class="fa fa-circle text-danger"></i> Cash
+                                        <i class="fa fa-circle text-warning"></i> Bank
+
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Users Behavior</h4>
-                                    <p class="card-category">24 Hours performance</p>
+                                <h4 class="card-title">Monthly Statistics <br>
+                                    <small></small>
+                                </h4>
+                                <div class="card-body">
+                                    <div id="chartActivityx" class="ct-chart "></div>
                                 </div>
-                                <div class="card-body ">
-                                    <div id=chartHours class="ct-chart"></div>
-                                </div>
-                                <div class="card-footer ">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Open
-                                        <i class="fa fa-circle text-danger"></i> Click
-                                        <i class="fa fa-circle text-warning"></i> Click Second Time
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-history"></i> Updated 3 minutes ago
-                                    </div>
-                                </div>
+                                <h6>Legend</h6>
+                                <i class="fa fa-circle text-info"></i> Account In
+                                <i class="fa fa-circle text-danger"></i> Account Out
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">2017 Sales</h4>
-                                    <p class="card-category">All products including Taxes</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div id="chartActivity" class="ct-chart"></div>
-                                </div>
-                                <div class="card-footer ">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Tesla Model S
-                                        <i class="fa fa-circle text-danger"></i> BMW 5 Series
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-check"></i> Data information certified
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card  card-tasks">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Tasks</h4>
-                                    <p class="card-category">Backend development</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div class="table-full-width">
-                                        <table class="table">
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign"></span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   checked>
-                                                            <span class="form-check-sign"></span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   checked>
-                                                            <span class="form-check-sign"></span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Flooded: One year later, assessing what was lost and what was found
-                                                    when a ravaging rain swept through metro Detroit
-                                                </td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" checked>
-                                                            <span class="form-check-sign"></span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value="">
-                                                            <span class="form-check-sign"></span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Read "Following makes Medium better"</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                   checked>
-                                                            <span class="form-check-sign"></span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>Unfollow 5 enemies from twitter</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="card-footer ">
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
+    <script>
+        <!-- javascript -->
+        Chartist.Pie('#chartPreferences', {
 
+            series: {{  session["compp"] | safe}}
+        });</script>
+    <script>
+        <!-- javascript -->
+        var data = {
+            labels: ['Jan'],
+            series: [
+                [54200],
+                [41200]
+            ]
+        };
+
+        var options = {
+            seriesBarDistance: 10,
+            axisX: {
+                showGrid: false
+            }
+        };
+
+        var responsiveOptions = [
+            ['screen and (max-width: 640px)', {
+                seriesBarDistance: 5,
+                axisX: {
+                    labelInterpolationFnc: function (value) {
+                        return value[0];
+                    }
+                }
+            }]
+        ];
+
+        Chartist.Bar('#chartActivityx', data, options, responsiveOptions);
+    </script>
 {% endblock %}

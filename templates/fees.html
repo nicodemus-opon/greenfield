@@ -3,23 +3,65 @@
     <div class="wrapper">
         {% include 'sidebar.html' %}
         <div class="main-panel">
-
+            {% include 'navbar.html' %}
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-8 ml-auto mr-auto">
-                                <!--
-                                                                received_from,class,kshs,being-payment-for-school,particulars-(admission,tuition,comp/french,swimming,transport,reportbook/diary,trip,meal,others),total
-                                -->
-                                <div class="row">
+                            <div class="col-md-10 ml-auto mr-auto">
+                                <div class="nav-container">
+                                    <ul class="nav nav-icons justify-content-center" role="tablist">
+                                        <li class="nav-item show active">
+                                            <a class="nav-link" id="description-tab" href="#description-logo" role="tab"
+                                               data-toggle="tab">
+                                                <i class="nc-icon nc-money-coins"></i><br>
+                                                Add fee transaction
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="location-tab" href="#map-logo" role="tab"
+                                               data-toggle="tab">
+                                                <i class="nc-icon nc-grid-45"></i><br>
+                                                Set Term fees
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="legal-info-tab" href="#legal-logo" role="tab"
+                                               data-toggle="tab">
+                                                <i class="fa fa-legal"></i><br>
+                                                Legal Info
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="help-tab" href="#help-logo" role="tab"
+                                               data-toggle="tab">
+                                                <i class="fa fa-life-ring"></i><br>
+                                                Help Center
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="description-logo"
+                                         aria-labelledby="info-tab">
+                                         <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="exampleFormControlInput2">Received From</label>
-                                            <input type="text" class="form-control from" id="exampleFormControlInput2"
+                                            <input type="text" list="browsers" class="form-control from"
+                                                   id="exampleFormControlInput2"
 
-                                                   placeholder="Transaction Details">
+                                                   placeholder="Received from">
+                                            <datalist id="browsers">
+                                                <option value="Chrome">
+                                                <option value="Firefox">
+                                                <option value="Internet Explorer">
+                                                <option value="Opera">
+                                                <option value="Safari">
+                                                <option value="Microsoft Edge">
+                                            </datalist>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -27,7 +69,7 @@
                                             <label for="exampleFormControlInput2">Class</label>
                                             <input type="text" class="form-control cl" id="exampleFormControlInput2"
 
-                                                   placeholder="Transaction Details">
+                                                   placeholder="Class">
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +92,7 @@
                                     <label for="exampleFormControlInput2">Extra Details</label>
                                     <input type="text" class="form-control ex" id="exampleFormControlInput2"
                                            name="desc"
-                                           placeholder="Transaction Details">
+                                           placeholder="Extra Details">
                                 </div>
                                 <div class="form-group">
                                     <!--label for="exampleFormControlInput3">Account</label-->
@@ -61,15 +103,28 @@
                                         <option value="Mpesa">Mpesa</option>
                                     </select>
                                 </div>
-                                <div class="form-group">
+                                <!--div class="form-group">
                                     <select name="hj" class="selectpicker" data-title="Action"
                                             data-style="btn-default btn-block" data-menu-style="dropdown-blue">
                                         <option value="pr">Print Receipt</option>
                                         <option value="tr">Go to Transaction</option>
                                     </select>
-                                </div>
+                                </div-->
                                 <button type="submit" id="subo" class="btn btn-success btn-block">Add Transaction
                                 </button>
+                                    </div>
+                                    <div class="tab-pane fade" id="map-logo" aria-labelledby="info-tab">
+
+                                    </div>
+                                    <div class="tab-pane fade" id="legal-logo" aria-labelledby="info-tab">
+
+                                    </div>
+                                    <div class="tab-pane fade" id="help-logo" aria-labelledby="info-tab">
+
+                                    </div>
+                                </div>
+
+
 
                             </div>
                         </div>
@@ -145,6 +200,7 @@
                     return $(this).attr("jizz");
                 }).get();
                 var jj = ji.join("!");
+                jj = jj.replace("/", "@");
                 var from = $(".from").val();
                 var cl = $(".cl").val();
                 var dt = $(".dt").val();

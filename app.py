@@ -1,14 +1,71 @@
-from flask import Flask, render_template, redirect, url_for, request, session
-import pymysql as mysql
-import pymysql
-import numstowords
-from functools import wraps
-import time
 from random import randint
+
+import pymysql
+import pymysql as mysql
+from flask import Flask, render_template, redirect, url_for, request, session
+
+import numstowords
 
 app = Flask(__name__)
 app.secret_key = "nico"
 app.debug = True
+
+
+def adder(ll=""):
+    # ll = "bi-90,jj-10,tt-90"
+    kk = ll.split(",")
+    # print(kk)
+    op = "-".join(kk)
+    # print(op)
+    opon = op.split("-")
+    # print(opon)
+    kkk = []
+    for z in opon:
+        try:
+            int(z)
+            kkk.append(z)
+        except Exception as e:
+            pass
+    full = 0
+    for x in kkk:
+        full += int(x)
+    # print(kkk)
+    return (full)
+
+
+def get_text(ll=""):
+    # ll = "bi-90,jj-10,tt-90"
+    kk = ll.split(",")
+    # print(kk)
+    op = "-".join(kk)
+    # print(op)
+    opon = op.split("-")
+    # print(opon)
+    kkk = []
+    for z in opon:
+        try:
+            int(z)
+        except Exception as e:
+            kkk.append(z)
+    return (kkk)
+
+
+def get_nums(ll=""):
+    # ll = "bi-90,jj-10,tt-90"
+    kk = ll.split(",")
+    # print(kk)
+    op = "-".join(kk)
+    # print(op)
+    opon = op.split("-")
+    # print(opon)
+    kkk = []
+    for z in opon:
+        try:
+            int(z)
+            kkk.append(z)
+        except Exception as e:
+            pass
+    return (kkk)
 
 
 @app.template_filter()
@@ -105,7 +162,16 @@ def read_data():
             lit_of_dels.append(st)
     if list_of_values == []:
         list_of_values = [['UH OH ;)'], ['This table is empty']]
+    if session["table"] == "fees":
+        todo = get_text(list_of_values[0][4])
+        pricex = get_nums(list_of_values[0][4])
+        lens = len(todo)
+        session["todo"] = todo
+        print(session["todo"])
+        session["pricex"] = pricex
+        session["lens"] = lens
     print(list_of_values)
+    list_of_values.reverse()
     session["cols"] = list_of_cols
     session["colsxy"] = len(list_of_cols)
     session["vals"] = list_of_values
@@ -120,10 +186,44 @@ def dash():
     return redirect(url_for("index"))
 
 
+def exe(query):
+    con = connect()
+    cur = con.cursor()
+    cur.execute(query)
+    lv = []
+    with con:
+        rows = cur.fetchall()
+        for row in rows:
+            kop = list(row.values())
+            lv.append(kop)
+    print(lv)
+    return (lv)
+
+
 @app.route('/', methods=["GET", "POST"])
 def index():
     set_db("localhost", "nico", "Black11060!", "rapha")
     connect()
+    trs = "SELECT COUNT(*) FROM transactions;"  # COUNT(*)
+    inse = "SELECT SUM(amountx) FROM transactions WHERE accountx='In';"  # SUM(amountx)
+    outse = "SELECT SUM(amountx) FROM transactions WHERE accountx='Out';"
+    mpesa = "SELECT SUM(amountx) FROM transactions WHERE type='Mpesa';"
+    cash = "SELECT SUM(amountx) FROM transactions WHERE type='Cash';"
+    bank = "SELECT SUM(amountx) FROM transactions WHERE type='Bank';"
+    t = exe(trs)
+    t = int(t[0][0])
+    i = exe(inse)
+    i = int(i[0][0])
+    o = exe(outse)
+    o = int(o[0][0])
+    f = i - o
+    mp = exe(mpesa)[0][0]
+    cs = exe(cash)[0][0]
+    bn = exe(bank)[0][0]
+    if mp == None:
+        mp = 0
+    session["compp"] = [mp, cs, bn]
+    session["valo"] = [f, i, o, t]
     session["cond"] = ""
     return render_template('index.html')
 
@@ -144,18 +244,28 @@ def fees():
 @app.route('/fee/<string:name>', methods=["GET", "POST"])
 def fee(name):
     print(name)
-    name.replace("!", ",")
+    name = name.replace("@", "/")
+    name = name.replace("!", ",")
     vals = name.split("..")
     # jj + ".." + from + ".." + cl + ".." + dt + ".." + ex + ".." + pt
     # idx	fromx	classx	datex	particulars	dets	typex	amountx
     idx = str(randint(1000, 9000))
-    amt = 0
-    ll = vals[0].split(",")
-    # ll=["bi-90,jj-10,tt-90"]
-    hh=
+    ll = vals[0]
+    amt = str(adder(ll))
     neo = [idx, vals[1], vals[2], vals[3], vals[0], vals[4], vals[5], amt]
     print(vals)
-    return ('fees.html')
+    session["cond"] = ""
+    session["table"] = "fees"
+    create_data(neo)
+    fp = ",".join(get_text(vals[0]))
+    desci = "fees for " + fp + " by " + vals[1]
+    print(desci)
+    other = [idx, vals[3], amt, "In", desci, vals[5], "Fees"]
+    session["cond"] = ""
+    session["table"] = "transactions"
+    create_data(other)
+    rdd = "/receipt/" + idx
+    return (redirect(rdd))
 
 
 @app.route('/invoice/<string:name>', methods=["GET", "POST"])
@@ -164,6 +274,14 @@ def invoice(name):
     session["table"] = "transactions"
     read_data()
     return render_template('invoice.html')
+
+
+@app.route('/receipt/<string:name>', methods=["GET", "POST"])
+def receipt(name):
+    session["cond"] = "where idx='" + name + "'"
+    session["table"] = "fees"
+    read_data()
+    return render_template('receipt.html')
 
 
 @app.route('/transact', methods=["GET", "POST"])
@@ -183,6 +301,11 @@ def inventory():
         create_data(inf)
 
     return redirect(url_for("reg"))
+
+
+@app.route("/calendar")
+def cal():
+    return render_template('calendar.html')
 
 
 if __name__ == '__main__':
