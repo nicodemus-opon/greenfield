@@ -1,0 +1,24 @@
+Rapha
+Add new term button that will save previous balances
+At begin of term add the amount to each student balance
+When fee is paid
+
+fees:
+Term
+Amount
+Class
+
+Student
+Name
+Idx
+Class
+Balance
+
+
+When fee is published
+Add function for calculating balance and call it when needed
+Add details  to student table
+
+New student place
+:promote all, add new student
+List of students and grades

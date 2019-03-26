@@ -10,42 +10,8 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-10 ml-auto mr-auto">
-                                <div class="nav-container">
-                                    <ul class="nav nav-icons justify-content-center" role="tablist">
-                                        <li class="nav-item show active">
-                                            <a class="nav-link" id="description-tab" href="#description-logo" role="tab"
-                                               data-toggle="tab">
-                                                <i class="nc-icon nc-money-coins"></i><br>
-                                                Add fee transaction
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="location-tab" href="#map-logo" role="tab"
-                                               data-toggle="tab">
-                                                <i class="nc-icon nc-grid-45"></i><br>
-                                                Set Term fees
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="legal-info-tab" href="#legal-logo" role="tab"
-                                               data-toggle="tab">
-                                                <i class="fa fa-legal"></i><br>
-                                                Legal Info
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="help-tab" href="#help-logo" role="tab"
-                                               data-toggle="tab">
-                                                <i class="fa fa-life-ring"></i><br>
-                                                Help Center
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
 
-                                <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="description-logo"
-                                         aria-labelledby="info-tab">
+
                                          <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
@@ -67,9 +33,15 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="exampleFormControlInput2">Class</label>
-                                            <input type="text" class="form-control cl" id="exampleFormControlInput2"
+                                            <input type="text" list="clss" class="form-control cl"
+                                                   id="exampleFormControlInput2"
 
                                                    placeholder="Class">
+                                            <datalist id="clss">
+                                                {% for i in range(session["lgrades"]) -%}
+                                                    <option value="{{ session["grades"][i][0] }}">
+                                                {%- endfor %}
+                                            </datalist>
                                         </div>
                                     </div>
                                 </div>
@@ -112,16 +84,7 @@
                                 </div-->
                                 <button type="submit" id="subo" class="btn btn-success btn-block">Add Transaction
                                 </button>
-                                    </div>
-                                    <div class="tab-pane fade" id="map-logo" aria-labelledby="info-tab">
 
-                                    </div>
-                                    <div class="tab-pane fade" id="legal-logo" aria-labelledby="info-tab">
-
-                                    </div>
-                                    <div class="tab-pane fade" id="help-logo" aria-labelledby="info-tab">
-
-                                    </div>
                                 </div>
 
 

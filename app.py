@@ -11,6 +11,14 @@ app.secret_key = "nico"
 app.debug = True
 
 
+def wrap():
+    print("jjj")
+
+
+def add_di_balance():
+    pass
+
+
 def adder(ll=""):
     # ll = "bi-90,jj-10,tt-90"
     kk = ll.split(",")
@@ -97,6 +105,13 @@ def connect():
 def del_data(condition=""):
     table = session["table"]
     sql = "DELETE FROM " + table + " where " + condition + " ;"
+    con = connect()
+    cur = con.cursor()
+    cur.execute(sql)
+    con.commit()
+
+
+def com_exec(sql=""):
     con = connect()
     cur = con.cursor()
     cur.execute(sql)
@@ -196,7 +211,7 @@ def exe(query):
         for row in rows:
             kop = list(row.values())
             lv.append(kop)
-    print(lv)
+    # print(lv)
     return (lv)
 
 
@@ -210,6 +225,7 @@ def index():
     mpesa = "SELECT SUM(amountx) FROM transactions WHERE type='Mpesa';"
     cash = "SELECT SUM(amountx) FROM transactions WHERE type='Cash';"
     bank = "SELECT SUM(amountx) FROM transactions WHERE type='Bank';"
+    notif = "SELECT * FROM notifications;"
     t = exe(trs)
     t = int(t[0][0])
     i = exe(inse)
@@ -217,6 +233,11 @@ def index():
     o = exe(outse)
     o = int(o[0][0])
     f = i - o
+    session["notif"] = exe(notif)
+    session["leno"] = len(session["notif"])
+    print("====notif===")
+    print(session["notif"])
+    print(session["leno"])
     mp = exe(mpesa)[0][0]
     cs = exe(cash)[0][0]
     bn = exe(bank)[0][0]
@@ -238,6 +259,9 @@ def reg():
 
 @app.route('/fees', methods=["GET", "POST"])
 def fees():
+    bb = "select * from grade"
+    session["grades"] = exe(bb)
+    session["lgrades"] = len(session["grades"])
     return render_template('fees.html')
 
 
@@ -306,6 +330,30 @@ def inventory():
 @app.route("/calendar")
 def cal():
     return render_template('calendar.html')
+
+
+@app.route("/students")
+def students():
+    return render_template('students.html')
+
+
+
+@app.route("/setfees")
+def setfee():
+    session["feex"] = exe("select * from termfees")[0]
+    return render_template('setfee.html')
+
+
+@app.route('/sf/<string:name>', methods=["GET", "POST"])
+def sf(name):
+    gh = name.split("-")
+    print(gh)
+    sql = "truncate termfees"
+    com_exec(sql)
+    session["table"]="termfees"
+    create_data(gh)
+    session["fees"] = []
+    return redirect(url_for("setfee"))
 
 
 if __name__ == '__main__':

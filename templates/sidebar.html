@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="purple" data-image="static/assets/img/ok.jpg">
+<div class="sidebar" data-color="blue" data-image="static/assets/img/ok.jpg">
 
     <div class="sidebar-wrapper">
         <div class="logo">
@@ -23,10 +23,41 @@
                     <p>Transactions</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/fees">
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#pagesExamples" aria-expanded="true">
                     <i class="nc-icon nc-bank"></i>
-                    <p>Fees</p>
+                    <p>
+                        FEES
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse show" id="pagesExamples" style="">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/fees">
+                                <span class="sidebar-mini">AT</span>
+                                <span class="sidebar-normal">Add fee Transaction</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/setfees">
+                                <span class="sidebar-mini">ST</span>
+                                <span class="sidebar-normal">Set Term Fees</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#">
+                                <span class="sidebar-mini">VB</span>
+                                <span class="sidebar-normal">View Balances</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/students">
+                    <i class="nc-icon nc-circle-09"></i>
+                    <p>students</p>
                 </a>
             </li>
             <li class="nav-item ">
@@ -35,6 +66,7 @@
                     <p>Calendar</p>
                 </a>
             </li>
+
             <!--li class="nav-item ">
                 <a class="nav-link" href="/reports">
                     <i class="nc-icon nc-single-copy-04"></i>
