@@ -282,7 +282,7 @@ def fee(name):
     session["table"] = "fees"
     create_data(neo)
     fp = ",".join(get_text(vals[0]))
-    desci = "fees for " + fp + " by " + vals[1]
+    desci = "fees .for " + fp + " by " + vals[1]
     print(desci)
     other = [idx, vals[3], amt, "In", desci, vals[5], "Fees"]
     session["cond"] = ""
