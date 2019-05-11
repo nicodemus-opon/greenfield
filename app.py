@@ -337,7 +337,6 @@ def students():
     return render_template('students.html')
 
 
-
 @app.route("/setfees")
 def setfee():
     session["feex"] = exe("select * from termfees")[0]
