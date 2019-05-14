@@ -201,6 +201,14 @@ def dash():
     return redirect(url_for("index"))
 
 
+@app.route('/d/<string:name>', methods=["GET", "POST"])
+def delete(name):
+    print(name)
+    que="delete  from transactions where idx= "+name
+    exe(que)
+    return redirect(url_for("reg"))
+
+
 def exe(query):
     con = connect()
     cur = con.cursor()
