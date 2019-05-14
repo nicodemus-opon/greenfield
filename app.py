@@ -235,13 +235,17 @@ def index():
     cash = "SELECT SUM(amountx) FROM transactions WHERE type='Cash';"
     bank = "SELECT SUM(amountx) FROM transactions WHERE type='Bank';"
     notif = "SELECT * FROM notifications;"
-    t = exe(trs)
-    t = int(t[0][0])
-    i = exe(inse)
-    i = int(i[0][0])
-    o = exe(outse)
-    o = int(o[0][0])
-    f = i - o
+    f=t=i=o=0
+    try:
+        t = exe(trs)
+        t = int(t[0][0])
+        i = exe(inse)
+        i = int(i[0][0])
+        o = exe(outse)
+        o = int(o[0][0])
+        f = i - o
+    except Exception as e:
+        print("shit!",e)
     session["notif"] = exe(notif)
     session["leno"] = len(session["notif"])
     print("====notif===")
