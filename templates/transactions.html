@@ -42,7 +42,7 @@
                                 {%- endfor %}
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ session['invoice'][i] }}" class="btn btn-secondary">Print</a>
+                                        <a href="invoice/{{ session["vals"][i][0] }}" class="btn btn-secondary">Print</a>
                                         <a href="d/{{ session["vals"][i][0] }}" class="btn btn-danger">Delete</a>
                                     </div>
                                 </td>
