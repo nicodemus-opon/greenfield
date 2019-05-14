@@ -1,0 +1,102 @@
+{% extends 'layout.html' %} {% block body %}
+
+    <body class="login-page sidebar-collapse " style='background-image: url("../static/assets/img/ok.jpg");background-repeat: no-repeat;background-size: cover'>
+
+
+    <div class="page-header clear-filter" filter-color="orange">
+
+        <div class="content">
+            <div class="container" style="padding-top: 100px;">
+                <div class="col-md-5 ml-auto mr-auto">
+                    <div class="card card-login card-plainm">
+                        <form class="form" method="POST" action="">
+                            <div class="card-header text-center">
+                                <div class="logo-container">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                {% if session["erro"] %}
+                                    <div class="container">
+                                        <p class="alert alert-danger" role="alert">
+                                            <strong>Error:</strong> {{ session["erro"] }}
+                                    </div>
+                                {% endif %}
+                                <div class="input-group no-border input-lg">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="now-ui-icons users_circle-08"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="email" class="form-control" placeholder="email...">
+                                </div>
+
+                                <div class="input-group no-border input-lg">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="now-ui-icons text_caps-small"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" name="password" placeholder="password..."
+                                           class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <!--input type="submit"/-->
+                                <input type="submit" value="Log in" class="btn btn-primary  btn-block">
+                                <br>
+                                <br>
+                                <div class="pull-left">
+                                    <h6><a class="link" href="/register">Create Account</a></h6>
+                                </div>
+
+                                <div class="pull-right">
+                                    <h6><a href="mailto:cbsoftlabke@gmail.com" class="link">Need Help?</a></h6>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="modal fade bg-primary" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register CCSATS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="GET" action="">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input name="emailreg" type="text" class="form-control" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input name="passwordreg" type="password" class="form-control" id="exampleInputPassword1"
+                                   placeholder="Password">
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Sign up">
+                    </form>
+                </div>
+                <!--div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div-->
+            </div>
+        </div>
+    </div>
+    </body>
+
+{% endblock %}

@@ -217,7 +217,8 @@ def exe(query):
 
 @app.route('/', methods=["GET", "POST"])
 def index():
-    set_db("localhost", "nico", "Black11060!", "rapha")
+    #set_db("localhost", "nico", "Black11060!", "rapha")
+    set_db("remotemysql.com", "0BkENsbWPp", "pyZ1NN0Rhd", "0BkENsbWPp")
     connect()
     trs = "SELECT COUNT(*) FROM transactions;"  # COUNT(*)
     inse = "SELECT SUM(amountx) FROM transactions WHERE accountx='In';"  # SUM(amountx)
@@ -255,6 +256,12 @@ def reg():
     session["cond"] = ""
     read_data()
     return render_template('transactions.html')
+
+
+@app.route('/login', methods=["GET", "POST"])
+def login():
+
+    return render_template('login.html')
 
 
 @app.route('/fees', methods=["GET", "POST"])
