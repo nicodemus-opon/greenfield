@@ -1,8 +1,9 @@
+import csv
 from random import randint
 
 import pymysql
 import pymysql as mysql
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session,send_from_directory
 
 import numstowords
 
@@ -34,6 +35,7 @@ def adder(ll=""):
             kkk.append(z)
         except Exception as e:
             pass
+
     full = 0
     for x in kkk:
         full += int(x)
@@ -171,8 +173,8 @@ def read_data():
         for row in rows:
             kop = list(row.values())
             list_of_values.append(kop)
-            st = "/d/" + kop[0]
-            rd = "/invoice/" + kop[0]
+            st = "/d/" + str(kop[0])
+            rd = "/invoice/" + str(kop[0])
             list_of_updates.append(rd)
             lit_of_dels.append(st)
     if list_of_values == []:
@@ -204,7 +206,7 @@ def dash():
 @app.route('/d/<string:name>', methods=["GET", "POST"])
 def delete(name):
     print(name)
-    que="delete  from transactions where idx= "+name
+    que = "delete from transactions where idx= " + name
     exe(que)
     return redirect(url_for("reg"))
 
@@ -225,8 +227,8 @@ def exe(query):
 
 @app.route('/', methods=["GET", "POST"])
 def index():
-    #set_db("localhost", "nico", "Black11060!", "rapha")
-    set_db("remotemysql.com", "0BkENsbWPp", "pyZ1NN0Rhd", "0BkENsbWPp")
+    set_db("localhost", "nico", "Black11060!", "rapha")
+    # set_db("remotemysql.com", "0BkENsbWPp", "pyZ1NN0Rhd", "0BkENsbWPp")
     connect()
     trs = "SELECT COUNT(*) FROM transactions;"  # COUNT(*)
     inse = "SELECT SUM(amountx) FROM transactions WHERE accountx='In';"  # SUM(amountx)
@@ -235,7 +237,7 @@ def index():
     cash = "SELECT SUM(amountx) FROM transactions WHERE type='Cash';"
     bank = "SELECT SUM(amountx) FROM transactions WHERE type='Bank';"
     notif = "SELECT * FROM notifications;"
-    f=t=i=o=0
+    f = t = i = o = 0
     try:
         t = exe(trs)
         t = int(t[0][0])
@@ -245,7 +247,8 @@ def index():
         o = int(o[0][0])
         f = i - o
     except Exception as e:
-        print("shit!",e)
+        print("shit!", e)
+
     session["notif"] = exe(notif)
     session["leno"] = len(session["notif"])
     print("====notif===")
@@ -272,15 +275,17 @@ def reg():
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
-
     return render_template('login.html')
 
 
 @app.route('/fees', methods=["GET", "POST"])
 def fees():
     bb = "select * from grade"
+    cc = "select * from students"
     session["grades"] = exe(bb)
     session["lgrades"] = len(session["grades"])
+    session["dents"] = exe(cc)
+    session["ldents"] = len(session["dents"])
     return render_template('fees.html')
 
 
@@ -327,6 +332,30 @@ def receipt(name):
     return render_template('receipt.html')
 
 
+@app.route('/download/<string:name>', methods=["GET", "POST"])
+def download(name):
+    session["cond"] = ""
+    session["table"] = name
+    arr = read_data()
+    urlx = "static/" + name + ".csv"
+    wtr = csv.writer(open(urlx, 'w'), delimiter=',', lineterminator='\n')
+    print("arr[0]")
+    print(arr[0])
+    for x in [arr[0]]:
+        newarray=[]
+        for y in x:
+            if y[-1] == "x":
+                print("equo")
+                y = y[0:-1]
+            else:
+                print("not equo")
+            newarray.append(y)
+        wtr.writerows([newarray])
+    for x in arr[1]: wtr.writerows([x])
+
+    return redirect(urlx)
+
+
 @app.route('/transact', methods=["GET", "POST"])
 def inventory():
     if request.method == 'POST':
@@ -346,6 +375,21 @@ def inventory():
     return redirect(url_for("reg"))
 
 
+@app.route('/newstudent', methods=["GET", "POST"])
+def newstudent():
+    if request.method == 'POST':
+        print(request.form)
+
+        name = request.form["name"]
+        grade = request.form["grade"]
+        balance = request.form["balance"]
+
+        inf = "insert into students (namex,gradex,balancex) values('" + name + "','" + grade + "','" + balance + "')"
+        com_exec(inf)
+
+    return redirect(url_for("students"))
+
+
 @app.route("/calendar")
 def cal():
     return render_template('calendar.html')
@@ -353,6 +397,9 @@ def cal():
 
 @app.route("/students")
 def students():
+    session["table"] = "students"
+    session["cond"] = ""
+    read_data()
     return render_template('students.html')
 
 
@@ -368,7 +415,7 @@ def sf(name):
     print(gh)
     sql = "truncate termfees"
     com_exec(sql)
-    session["table"]="termfees"
+    session["table"] = "termfees"
     create_data(gh)
     session["fees"] = []
     return redirect(url_for("setfee"))

@@ -1,0 +1,12 @@
+id,date,amount,account,desc,type,status
+4391,2019-05-19,89,In,fees for tuition by nico/1,Cash,Fees
+4789,2019-05-19,0,In,fees for  by nico,Cash,Fees
+6277,2019-01-27,245,In,"fees for tuition,swimming by Internet Explorer",Bank,Fees
+5245,2019-01-18,6000,In,"5000-tuition,1000-admission",Cash,Fees
+8015,2019-01-18,3000,In,FOR BOOKS,Cash,Complete
+6616,2019-01-18,4000,In,sample,Mpesa,Complete
+8367,2019-01-17,579,In,"123-swimming,456-trip",Cash,Fees
+3559,2019-01-17,4000,In,"1000-tuition,3000-swimming",Bank,complete
+2327,2019-01-16,12000,In,hhhh,Bank,Complete
+7120,2019-01-17,12000,Out,for nico,Bank,Complete
+1771,2019-01-17,56777,In,salary for john,Cash,Complete

@@ -4,7 +4,7 @@
         {% include 'sidebar.html' %}
 
         <div class="main-panel">
-{% include 'navbar.html' %}
+            {% include 'navbar.html' %}
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
@@ -15,13 +15,15 @@
                                     <div class="row">
                                         <div class="col-5">
                                             <div class="icon-big text-center icon-warning">
-                                                <i class="nc-icon nc-chart text-warning"></i>
+                                                <i class="nc-icon nc-money-coins
+
+ text-warning"></i>
                                             </div>
                                         </div>
                                         <div class="col-7">
                                             <div class="numbers">
                                                 <p class="card-category">Account Balance</p>
-                                                <h4 class="card-title">Ksh. {{ session["valo"][0]  }}</h4>
+                                                <h4 class="card-title">Ksh. {{ session["valo"][0] }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -29,7 +31,7 @@
                                 <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-refresh"></i>
+
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +42,9 @@
                                     <div class="row">
                                         <div class="col-5">
                                             <div class="icon-big text-center icon-warning">
-                                                <i class="nc-icon nc-light-3 text-success"></i>
+                                                <i class="nc-icon nc-simple-add
+
+ text-success"></i>
                                             </div>
                                         </div>
                                         <div class="col-7">
@@ -54,7 +58,7 @@
                                 <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-calendar-o"></i>
+
                                     </div>
                                 </div>
                             </div>
@@ -65,13 +69,15 @@
                                     <div class="row">
                                         <div class="col-5">
                                             <div class="icon-big text-center icon-warning">
-                                                <i class="nc-icon nc-vector text-danger"></i>
+                                                <i class="nc-icon nc-simple-delete
+
+ text-danger"></i>
                                             </div>
                                         </div>
                                         <div class="col-7">
                                             <div class="numbers">
                                                 <p class="card-category">Account Out</p>
-                                                <h4 class="card-title">Ksh. {{ session["valo"][2]  }}</h4>
+                                                <h4 class="card-title">Ksh. {{ session["valo"][2] }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -79,7 +85,7 @@
                                 <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-clock-o"></i>
+
                                     </div>
                                 </div>
                             </div>
@@ -104,14 +110,14 @@
                                 <div class="card-footer ">
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-refresh"></i>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-8">
                             <div class="card ">
 
                                 <h4 class="card-title">
@@ -136,21 +142,25 @@
                             </div>
                         </div>
 
-                        <div class="col-md-8 col-md-offset-1">
-                            <div class="card ">
-                                <h4 class="card-title">Monthly Statistics
-
-                                </h4>
-                                <div class="row margin-top">
-                                    <div class="col-md-10 col-md-offset-1m">
-                                        <div id="chartActivityx" class="ct-chart "></div>
-                                    </div>
+                        <div class="col-md-4 col-md-offset-1">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-header">
+                                    Download
                                 </div>
-
-
-                                <h6>Legend</h6>
-                                <i class="fa fa-circle text-info"></i> Account In
-                                <i class="fa fa-circle text-danger"></i> Account Out
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><img src="static/assets/img/excel.png"
+                                                                     class="card-img-top" alt="..."
+                                                                     style="height:20px; width:20px"> <a href="download/transactions" class="text-dark">All Transactions</a>
+                                    </li>
+                                    <li class="list-group-item"><img src="static/assets/img/excel.png"
+                                                                     class="card-img-top" alt="..."
+                                                                     style="height:20px; width:20px"> <a href="download/fees" class="text-dark">Fee Transactions</a>
+                                    </li>
+                                    <li class="list-group-item"><img src="static/assets/img/excel.png"
+                                                                     class="card-img-top" alt="..."
+                                                                     style="height:20px; width:20px"> <a href="download/students" class="text-dark">Student Balances</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
