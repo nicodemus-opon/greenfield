@@ -3,7 +3,7 @@ from random import randint
 
 import pymysql
 import pymysql as mysql
-from flask import Flask, render_template, redirect, url_for, request, session,send_from_directory
+from flask import Flask, render_template, redirect, url_for, request, session
 
 import numstowords
 
@@ -243,12 +243,13 @@ def index():
         t = int(t[0][0])
         i = exe(inse)
         i = int(i[0][0])
-        o = exe(outse)
-        o = int(o[0][0])
-        f = i - o
-    except Exception as e:
-        print("shit!", e)
+        out = exe(outse)
+        o = int(out[0][0])
 
+    except Exception as e:
+        print(t, i, o, f)
+        print("shit!", e)
+    f = i - o
     session["notif"] = exe(notif)
     session["leno"] = len(session["notif"])
     print("====notif===")
@@ -259,6 +260,10 @@ def index():
     bn = exe(bank)[0][0]
     if mp == None:
         mp = 0
+    if cs == None:
+        cs = 0
+    if bn == None:
+        bn = 0
     session["compp"] = [mp, cs, bn]
     session["valo"] = [f, i, o, t]
     session["cond"] = ""
@@ -301,6 +306,8 @@ def fee(name):
     ll = vals[0]
     amt = str(adder(ll))
     neo = [idx, vals[1], vals[2], vals[3], vals[0], vals[4], vals[5], amt]
+    idd = neo[0][1].split("/")
+    dd = idd[1]
     print(vals)
     session["cond"] = ""
     session["table"] = "fees"
@@ -342,7 +349,7 @@ def download(name):
     print("arr[0]")
     print(arr[0])
     for x in [arr[0]]:
-        newarray=[]
+        newarray = []
         for y in x:
             if y[-1] == "x":
                 print("equo")
@@ -409,9 +416,14 @@ def setfee():
     return render_template('setfee.html')
 
 
-@app.route('/sf/<string:name>', methods=["GET", "POST"])
+@app.route('/sfn/<string:name>', methods=["GET", "POST"])
 def sf(name):
     gh = name.split("-")
+    idd = gh[0][1].split("/")
+    dd = idd[1]
+    print("-------")
+    print(idd)
+    print(dd)
     print(gh)
     sql = "truncate termfees"
     com_exec(sql)
