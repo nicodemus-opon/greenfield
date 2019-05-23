@@ -227,8 +227,8 @@ def exe(query):
 
 @app.route('/', methods=["GET", "POST"])
 def index():
-    #set_db("localhost", "nico", "Black11060!", "rapha")
-    set_db("remotemysql.com", "0BkENsbWPp", "pyZ1NN0Rhd", "0BkENsbWPp")
+    set_db("localhost", "nico", "Black11060!", "rapha")
+    # set_db("remotemysql.com", "0BkENsbWPp", "pyZ1NN0Rhd", "0BkENsbWPp")
     connect()
     trs = "SELECT COUNT(*) FROM transactions;"  # COUNT(*)
     inse = "SELECT SUM(amountx) FROM transactions WHERE accountx='In';"  # SUM(amountx)
@@ -294,6 +294,19 @@ def fees():
     return render_template('fees.html')
 
 
+def update_balance(amount=0, id=""):
+    que = "select balancex from students where idx='" + id + "'"
+    res = exe(que)
+    print("res")
+    print(res)
+    cbal = int(res[0][0])
+    newamt = cbal - amount
+
+    sqq = "update students set`balancex`=" + str(newamt) + " where `idx`='" + id + "'"
+    print(sqq)
+    com_exec(sqq)
+
+
 @app.route('/fee/<string:name>', methods=["GET", "POST"])
 def fee(name):
     print(name)
@@ -306,8 +319,9 @@ def fee(name):
     ll = vals[0]
     amt = str(adder(ll))
     neo = [idx, vals[1], vals[2], vals[3], vals[0], vals[4], vals[5], amt]
-    idd = neo[0][1].split("/")
+    idd = neo[1].split("/")
     dd = idd[1]
+    update_balance(int(amt), dd)
     print(vals)
     session["cond"] = ""
     session["table"] = "fees"
@@ -416,19 +430,51 @@ def setfee():
     return render_template('setfee.html')
 
 
-@app.route('/sfn/<string:name>', methods=["GET", "POST"])
+def setbal(idx, amt, grade, list_amts):
+    newamt = 0
+    amt = int(amt)
+    if grade == "playgroup1":
+        newamt = amt + int(list_amts[1])
+    elif grade == "pp1":
+        newamt = amt + int(list_amts[2])
+    elif grade == "pp2":
+        newamt = amt + int(list_amts[3])
+    elif grade == "grade1":
+        newamt = amt + int(list_amts[4])
+    elif grade == "grade2":
+        newamt = amt + int(list_amts[5])
+    elif grade == "grade3":
+        newamt = amt + int(list_amts[6])
+    elif grade == "grade4":
+        newamt = amt + int(list_amts[7])
+    elif grade == "grade5":
+        newamt = amt + int(list_amts[8])
+    elif grade == "grade6":
+        newamt = amt + int(list_amts[9])
+    elif grade == "grade7":
+        newamt = amt + int(list_amts[10])
+    elif grade == "grade8":
+        newamt = amt + int(list_amts[11])
+
+    sqq = "update students set`balancex`=" + str(newamt) + " where `idx`='" + str(idx) + "'"
+    print(sqq)
+    com_exec(sqq)
+
+
+@app.route('/sf/<string:name>', methods=["GET", "POST"])
 def sf(name):
     gh = name.split("-")
-    idd = gh[0][1].split("/")
-    dd = idd[1]
     print("-------")
-    print(idd)
-    print(dd)
     print(gh)
     sql = "truncate termfees"
     com_exec(sql)
     session["table"] = "termfees"
     create_data(gh)
+    sq = "select * from students"
+    res = exe(sq)
+    for x in res:
+        setbal(x[0], x[3], x[2], gh)
+
     session["fees"] = []
     return redirect(url_for("setfee"))
 
