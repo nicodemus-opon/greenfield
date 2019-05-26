@@ -192,7 +192,14 @@
             <div class="row">
                 <div class="column"><b>Amount in Words</b> <u
                         style="border-bottom: 1px dashed #999;text-decoration: none;">{{ session["vals"][0][7] | words }}</u>
+
+                    <br>
+                    <p><b>Paid for</b> <em
+                        style="border-bottom: 1px dashed #999;text-decoration: none;">{{ session["fromx"]  }}</em></p>
+                    <p><b>Student id</b> <em
+                        style="border-bottom: 1px dashed #999;text-decoration: none;">{{ session["admno"]  }}</em></p>
                 </div>
+
                 <div class="columnx" style="align-content: center;">
                     <b> <em>With Thanks</em></b><br>
                     <div class="rectangle"></div>

@@ -187,6 +187,8 @@ def read_data():
         print(session["todo"])
         session["pricex"] = pricex
         session["lens"] = lens
+        session["fromx"] = list_of_values[0][1].split("/")[0]
+        session["admno"] = list_of_values[0][1].split("/")[1]
     print(list_of_values)
     list_of_values.reverse()
     session["cols"] = list_of_cols
@@ -227,8 +229,8 @@ def exe(query):
 
 @app.route('/', methods=["GET", "POST"])
 def index():
-    #set_db("localhost", "nico", "Black11060!", "rapha")
-    set_db("remotemysql.com", "0BkENsbWPp", "pyZ1NN0Rhd", "0BkENsbWPp")
+    set_db("localhost", "nico", "Black11060!", "rapha")
+    # set_db("remotemysql.com", "0BkENsbWPp", "pyZ1NN0Rhd", "0BkENsbWPp")
     connect()
     trs = "SELECT COUNT(*) FROM transactions;"  # COUNT(*)
     inse = "SELECT SUM(amountx) FROM transactions WHERE accountx='In';"  # SUM(amountx)
@@ -272,6 +274,9 @@ def index():
 
 @app.route('/transactions', methods=["GET", "POST"])
 def reg():
+    extras = "Salary,water,vehicle maintenance,electricity,bank charges,food supplies,fuel expenses,loan repayment,telephone and postage,other"
+    session["extras"] = extras.split(",")
+    session["lextras"] = len(session["extras"])
     session["table"] = "transactions"
     session["cond"] = ""
     read_data()
@@ -288,6 +293,7 @@ def fees():
     bb = "select * from grade"
     cc = "select * from students"
     session["grades"] = exe(bb)
+    print(session["grades"])
     session["lgrades"] = len(session["grades"])
     session["dents"] = exe(cc)
     session["ldents"] = len(session["dents"])
@@ -459,6 +465,27 @@ def setbal(idx, amt, grade, list_amts):
     sqq = "update students set`balancex`=" + str(newamt) + " where `idx`='" + str(idx) + "'"
     print(sqq)
     com_exec(sqq)
+
+
+@app.route("/promote")
+def promote():
+    grades = ['playgroup', 'pp1', 'pp2', 'grade1', 'grade2', 'grade3', 'grade4', 'grade5', 'grade6', 'grade7', 'grade8']
+    c = 0
+    zx=exe("select idx from students")
+    beg=""
+    for x in grades:
+        y = c + 1
+        try:
+            sqq = "update students set`gradex`='" + grades[y] + "' where gradex='" + grades[c] + "'"
+            print(sqq)
+        except Exception as e:
+            print(e)
+            sqq = "update students set`gradex`='Finished' where gradex='" + grades[c] + "'"
+            com_exec(sqq)
+            break
+        com_exec(sqq)
+        c += 1
+    return redirect(url_for("students"))
 
 
 @app.route('/sf/<string:name>', methods=["GET", "POST"])

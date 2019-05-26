@@ -96,8 +96,13 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput2">Description</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput2" name="desc"
+                            <input type="text" class="form-control" list="extras" id="exampleFormControlInput2" name="desc"
                                    placeholder="Transaction Details">
+                            <datalist id="extras">
+                                                {% for i in range(session["lextras"]) -%}
+                                                    <option value="{{ session["extras"][i]  }}">
+                                                {%- endfor %}
+                                            </datalist>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
