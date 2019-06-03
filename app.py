@@ -424,6 +424,10 @@ def cal():
 
 @app.route("/students")
 def students():
+    bb = "select * from grade"
+    session["grades"] = exe(bb)
+    print(session["grades"])
+    session["lgrades"] = len(session["grades"])
     session["table"] = "students"
     session["cond"] = ""
     read_data()
