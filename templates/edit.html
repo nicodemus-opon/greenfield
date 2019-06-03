@@ -34,8 +34,13 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Grade</label>
-                                        <input type="text" value="{{ session["vals"][0][2] }}" name="grade1"
+                                        <input type="text" list="clss" value="{{ session["vals"][0][2] }}" name="grade1"
                                                class="form-control g3"/>
+                                        <datalist id="clss">
+                                                {% for i in range(session["lgrades"]) -%}
+                                                    <option value="{{ session["grades"][i][0] }}">
+                                                {%- endfor %}
+                                            </datalist>
                                     </div>
                                 </div>
                                 <div class="col-6">

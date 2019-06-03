@@ -229,8 +229,8 @@ def exe(query):
 
 @app.route('/', methods=["GET", "POST"])
 def index():
-    set_db("localhost", "nico", "Black11060!", "rapha")
-    # set_db("remotemysql.com", "0BkENsbWPp", "pyZ1NN0Rhd", "0BkENsbWPp")
+    # set_db("localhost", "nico", "Black11060!", "rapha")
+    set_db("remotemysql.com", "0BkENsbWPp", "pyZ1NN0Rhd", "0BkENsbWPp")
     connect()
     trs = "SELECT COUNT(*) FROM transactions;"  # COUNT(*)
     inse = "SELECT SUM(amountx) FROM transactions WHERE accountx='In';"  # SUM(amountx)
@@ -367,20 +367,26 @@ def edir(name):
 
 @app.route('/ds/<string:name>', methods=["GET", "POST"])
 def dels(name):
-    sql="delete from students where idx='"+name+"'"
+    sql = "delete from students where idx='" + name + "'"
     com_exec(sql)
     return redirect("/students")
+
 
 @app.route('/updatedets/<string:name>', methods=["GET", "POST"])
 def updatedets(name):
     gh = name.split("-")
-    sql = "update students set idx='" + gh[0] + "', namex='"+gh[1]+"', gradex='"+gh[2]+"', balancex='"+gh[3]+"' where idx='"+gh[0]+"'"
+    sql = "update students set idx='" + gh[0] + "', namex='" + gh[1] + "', gradex='" + gh[2] + "', balancex='" + gh[
+        3] + "' where idx='" + gh[0] + "'"
     com_exec(sql)
     return redirect("/students")
 
 
 @app.route('/change', methods=["GET", "POST"])
 def change():
+    bb = "select * from grade"
+    session["grades"] = exe(bb)
+    print(session["grades"])
+    session["lgrades"] = len(session["grades"])
     nam = request.args.get("q")
     session["cond"] = "where idx='" + nam + "'"
     session["table"] = "students"
