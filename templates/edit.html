@@ -1,0 +1,88 @@
+{% extends 'layout.html' %} {% block body %}
+
+    <div class="wrapper">
+        {% include 'sidebar.html' %}
+        <div class="main-panel">
+            {% include 'navbar.html' %}
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-10 ml-auto mr-auto">
+
+                            <div class="form-group">
+                                <label><b>Edit Details</b></label>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Student ID</label>
+                                        <input disabled type="text" value="{{ session["vals"][0][0] }}" name="grade1"
+                                               class="form-control g1"/>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" value="{{ session["vals"][0][1] }}" name="grade1"
+                                               class="form-control g2"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Grade</label>
+                                        <input type="text" value="{{ session["vals"][0][2] }}" name="grade1"
+                                               class="form-control g3"/>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Balance</label>
+                                        <input type="number" value="{{ session["vals"][0][3] }}" name="grade1"
+                                               class="form-control g4"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <button class="btn ii btn-success btn-block" id="subox">Update</button>
+                                <div class="col-6">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="static/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("redy");
+
+            $("#subox").click(function () {
+                // grades
+                var g1 = $(".g1").val();
+                var g2 = $(".g2").val();
+                var g3 = $(".g3").val();
+                var g4 = $(".g4").val();
+
+                //end grades
+
+
+                var yote =  g1 + "-" + g2 + "-" + g3 + "-" + g4;
+                console.log(yote);
+                var goto = "/updatedets/" + yote;
+                window.location = goto;
+            });
+        });
+    </script>
+{% endblock %}
