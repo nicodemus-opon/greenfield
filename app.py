@@ -243,8 +243,8 @@ def index():
     try:
         t = exe(trs)
         t = int(t[0][0])
-        i = exe(inse)
-        i = int(i[0][0])
+        ir = exe(inse)
+        i = int(ir[0][0])
         out = exe(outse)
         o = int(out[0][0])
 
